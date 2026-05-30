@@ -10,7 +10,7 @@ st.set_page_config(
 with st.sidebar:
         col1, col2, col3 = st.columns([1,2,1])
         with col2:
-            st.image("image/logo.png", width=180)
+            st.image("logo.png", width=180)
         st.title("📐 Matematika Geometri")
         pilihan = st.selectbox(
             "Pilih Bangun Datar",
