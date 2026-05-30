@@ -10,7 +10,7 @@ st.set_page_config(
 with st.sidebar:
         col1, col2, col3 = st.columns([1,2,1])
         with col2:
-            st.image("logo.png", width=180)
+            st.image("image/logo.png", width=180)
         st.title("📐 Matematika Geometri")
         pilihan = st.selectbox(
             "Pilih Bangun Datar",
@@ -55,7 +55,12 @@ match pilihan:
         if st.button("Hitung Persegi Panjang", type="primary"):
             luas = panjang * lebar
             keliling = 2 * (panjang + lebar)
-            st.success(f"✅ Luas persegi panjang adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")
+            # st.success(f"✅ Luas persegi panjang adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")
+            col1, col2 = st.columns([2,2])
+            with col1:
+                st.metric("Luas", value=luas, border=True) 
+            with col2:
+                st.metric("Keliling", value=keliling, border=True) 
             st.balloons()
 
     case "Lingkaran":
@@ -66,7 +71,12 @@ match pilihan:
         if st.button("Hitung Lingkaran"):
             luas = 3.14 * r * r
             keliling = 2 * 3.14 * r
-            st.success(f"✅ Luas lingkaran adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")
+            # st.success(f"✅ Luas lingkaran adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")
+            col1, col2 = st.columns([2,2])
+            with col1:
+                st.metric("Luas", value=luas, border=True) 
+            with col2:
+                st.metric("Keliling", value=keliling, border=True) 
             st.balloons()
 
     case "Segitiga":
@@ -77,7 +87,10 @@ match pilihan:
         tinggi = st.number_input("Masukkan Tinggi", min_value=0.0)
         if st.button("Hitung Segitiga"):
             luas = 0.5 * alas * tinggi
-            st.success(f"✅ Luas segitiga adalah {luas:.2f}")
+            # st.success(f"✅ Luas segitiga adalah {luas:.2f}")
+            col1st.columns([2,2])
+            with col1:
+                st.metric("Luas", value=luas, border=True)  
             st.balloons()
 
     case "Jajar Genjang":
@@ -90,7 +103,12 @@ match pilihan:
         if st.button("Hitung Jajar Genjang"):               
             luas = alas * tinggi
             keliling = 2 * (alas + sisi)
-            st.success(f"✅ Luas jajar genjang adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")
+            # st.success(f"✅ Luas jajar genjang adalah {luas:.2f} dan kelilingnya adalah {keliling:.2f}")  
+            col1, col2 = st.columns([2,2])
+            with col1:
+                st.metric("Luas", value=luas, border=True) 
+            with col2:
+                st.metric("Keliling", value=keliling, border=True)         
             st.balloons()
         
     case _:
